@@ -7,19 +7,18 @@ const App = () => {
   const [userList, setUserList] = useState([]);
 
   const createUserHandler = (name, age) => {
-    const userData = {
-      name: enteredName,
-      age: enteredAge,
-    };
-    // props.onSaveUserData(userData);
-    // setEnteredName("");
-    // setEnteredAge("");
+    setUserList((prevUserList) => {
+      return [
+        ...prevUserList,
+        { name: name, age: age, id: Math.random.toString() },
+      ];
+    });
   };
 
   return (
     <div>
-      <AddUser onCreateUser={setUserList} />
-      <UserList users={[userList]} />
+      <AddUser onCreateUser={createUserHandler} />
+      <UserList users={userList} />
     </div>
   );
 };

@@ -1,8 +1,8 @@
 .card {
   bottom: 1rem;
   left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
+  /* transform: translateX(-50%); */
+  /* position: absolute; */
   width: 90%;
   max-width: 40rem;
   background-color: white;
